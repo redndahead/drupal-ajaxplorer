@@ -28,7 +28,7 @@ function ajaxplorer_user($op, &$edit, $account, $category = null){
 	switch ($op) {
 		case "login":
       if (user_access('access personal ajaxplorer repository')) {
-        $drupHandler->onLoginUser($edit["name"], $edit["pass"]);
+        $drupHandler->onLoginUser($account->name, $account->pass);
       }
 			break;
 
