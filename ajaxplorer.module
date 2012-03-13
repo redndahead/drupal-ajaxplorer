@@ -38,7 +38,7 @@ function ajaxplorer_user($op, &$edit, $account, $category = null){
 
 		case "insert":
 		case "after_update":
-			$result = $drupHandler->onAfterStoreUser($edit['name'], $edit['pass'], user_access("administrate ajaxplorer repositories", $account), ($op == "insert"));
+			$result = $drupHandler->onAfterStoreUser($account->name, $account->pass, user_access("administrate ajaxplorer repositories", $account), ($op == "insert"));
 			break;
 
 		case "delete":
