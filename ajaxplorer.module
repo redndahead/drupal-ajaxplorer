@@ -76,7 +76,7 @@ function ajaxplorer_menu() {
 }
 
 function ajaxplorer_user_display() {
-  return '<iframe src="http://localhost/ajaxplorer" width="100%" height="800"></iframe>';
+  return '<iframe src="http://ewa-faculty-test.ucmerced.edu/ajaxplorer" width="100%" height="800"></iframe>';
 }
 
 function ajaxplorer_admin() {
