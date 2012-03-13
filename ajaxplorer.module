@@ -33,7 +33,7 @@ function ajaxplorer_user($op, &$edit, $account, $category = null){
 			break;
 
 		case "logout":
-			$drupHandler->onLogout();
+			$drupHandler->onLogout($account->name);
 			break;
 
 		case "insert":
