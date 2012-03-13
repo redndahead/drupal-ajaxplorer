@@ -104,6 +104,7 @@ function ajaxplorer_admin() {
     '#size' => 50,
     '#description' => t("The url to the ajaxplorer web page."),
     '#required' => TRUE,
+  );
 
   $form['ajaxplorer_secret_key'] = array(
     '#type' => 'textfield',
