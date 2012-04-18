@@ -64,12 +64,12 @@ function ajaxplorer_menu() {
     'type' => MENU_NORMAL_ITEM,
   );
 
-  $items['user/%user/ajaxplorer'] = array(
+  $items['manage-site'] = array(
     'title' => 'File Browser',
     'access callback' => 'user_access',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ajaxplorer_user_display'),
-    'access arguments' => array('access personal ajaxplorer repository'),
+    'access arguments' => array('create own openscholar site'),
     'type' => MENU_LOCAL_TASK,
   );
 
@@ -128,6 +128,8 @@ function ajaxplorer_user_display() {
     '#weight' => 40,
   );
 
+  $form['#submit'] = array('ajaxplorer_user_display_submit');
+
   $form['ajaxplorer_use_openscholar'] = array(
     '#type' => 'radios',
     '#title' => t('Type of site'),
@@ -149,4 +151,9 @@ function ajaxplorer_user_display() {
   }
 
   return $form;
+}
+
+function ajaxplorer_user_display_submit($form, &$form_state) {
+  dsm($form);
+  dsm($form_state);
 }
