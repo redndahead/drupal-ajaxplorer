@@ -134,7 +134,7 @@ function ajaxplorer_user_display() {
     '#type' => 'radios',
     '#title' => t('Type of site'),
     '#description' => t('Choose if you want to use our site building software or build your own site from scratch.'),
-    '#default_value' => !in_array('self hoster', $user->roles),
+    '#default_value' => (!in_array('self hoster', $user->roles)) ? 1 : 0,
     '#options' => array(
       1 => t('I want to use the tools available through the site builder and have the UC Merced brand'),
       0 => t('I will build my own site on my local machine and just upload it')
@@ -146,7 +146,7 @@ function ajaxplorer_user_display() {
   $ajaxplorer_url = variable_get('ajaxplorer_url', '');
   if (!empty($ajaxplorer_url) && in_array('self hoster', $user->roles)) {
     $form['ajaxplorer_file_browser'] = array(
-      '#value' => '<iframe src="' . $ajaxplorer_url . '" width="100%" height="100%"></iframe>',
+      '#value' => '<iframe src="' . $ajaxplorer_url . '" width="100%" height="500px"></iframe>',
     );
   }
 
