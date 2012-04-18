@@ -157,7 +157,7 @@ function ajaxplorer_user_display_submit($form, &$form_state) {
   global $user;
   $role_name = 'self hoster';
   $rid = db_result(db_query("SELECT rid FROM {role} WHERE name = '%s'", $role_name));
-  if (empty($form['values']['ajaxplorer_use_openscholar'])) {
+  if (empty($form_state['values']['ajaxplorer_use_openscholar'])) {
     if (!isset($user->roles[$rid])) {
       $roles = $user->roles + array($rid => $role_name);
       user_save($user, array('roles' => $roles));
